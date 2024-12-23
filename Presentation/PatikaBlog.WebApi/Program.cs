@@ -1,4 +1,6 @@
 
+using PatikaBlog.Persistence.Services;
+
 namespace PatikaBlog.WebApi
 {
     public class Program
@@ -6,6 +8,8 @@ namespace PatikaBlog.WebApi
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+
+            builder.Services.AddPersistenceServices(builder.Configuration);
 
             // Add services to the container.
 
@@ -24,6 +28,8 @@ namespace PatikaBlog.WebApi
             }
 
             app.UseHttpsRedirection();
+
+            app.UseAuthentication();
 
             app.UseAuthorization();
 
