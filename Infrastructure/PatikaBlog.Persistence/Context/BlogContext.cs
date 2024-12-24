@@ -27,13 +27,13 @@ namespace PatikaBlog.Persistence.Context
                 .HasOne(c => c.User)
                 .WithMany(u => u.Comments)
                 .HasForeignKey(c => c.UserId)
-                .OnDelete(DeleteBehavior.Cascade); // when a user is deleted, its comments are also deleted.
+                .OnDelete(DeleteBehavior.Restrict); 
 
             modelBuilder.Entity<Comment>()
                 .HasOne(c => c.Blog)
                 .WithMany(b => b.Comments)
                 .HasForeignKey(c => c.BlogId)
-                .OnDelete(DeleteBehavior.Cascade); // when a blog is deleted, its comments are also deleted.
+                .OnDelete(DeleteBehavior.Restrict); 
         }
     }
 }
