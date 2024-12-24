@@ -17,6 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Core\PatikaBlog.Application\PatikaBlog.Application.csproj" />
     <ProjectReference Include="..\..\Core\PatikaBlog.Domain\PatikaBlog.Domain.csproj" />
   </ItemGroup>
 
